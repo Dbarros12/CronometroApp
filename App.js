@@ -49,6 +49,11 @@ class App extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.ultimo}>
+            <Text style={styles.textoTitulo}>
+            Cronômetro
+             </Text>
+          </View>
         <Image
           source={require('./src/cronometro.png')}
           style={styles.cronometro}
@@ -71,6 +76,11 @@ class App extends Component {
             <Text style={styles.textoTempo}>
               {this.state.ultimo > 0 ? 'Ultimo tempo: ' + this.state.ultimo.toFixed(3) + 's' :  + ''}</Text>
           </View>
+          <View style={styles.ultimo}>
+            <Text style={styles.textoDesc}>
+             Pressione "Parar" 2x para zerar o hitórico
+             </Text>
+          </View>
       </View>
     );
   }
@@ -83,7 +93,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#00aeef',
   },
-
+  textoTitulo:{
+    fontSize:25,
+    fontWeight:'bold',
+    color:'#fff',
+  },
   timer: {
     marginTop: -180,
     color: '#fff',
@@ -122,6 +136,12 @@ const styles = StyleSheet.create({
     fontSize:25,
     fontStyle:'italic',
     color:'#fff'
+  },
+  textoDesc:{
+    fontSize:18,
+    fontStyle:'italic',
+    color:'#fff',
+    textAlign:'center'
   }
 });
 
